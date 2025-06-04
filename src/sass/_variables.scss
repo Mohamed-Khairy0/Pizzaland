@@ -5,3 +5,20 @@ $color-neutral: #f5f5f5;          // خلفيات فاتحة
 $color-white: #ffffff;            // أبيض
 $color-bg-dark: #121212;          // خلفية الوضع الداكن
 $color-text-dark: #e0e0e0;        // نصوص في الوضع الداكن
+
+
+$theme-margarita: (
+  primary: #e53935,
+  accent: #ff7043
+);
+
+$theme-veggie: (
+  primary: #4CAF50,
+  accent: #81C784
+);
+
+$theme-chicken: (
+  primary: #ff9800,
+  accent: #ffb74d
+);
+

@@ -1,5 +1,8 @@
 @use './_variables.scss' as *;
 @use './mixins' as *;
+@use './margarita.scss';
+@use './veggie.scss';
+@use './chicken.scss';
 
 @font-face {
   font-family: "cairoFont";
@@ -37,17 +40,17 @@ body {
       font-weight: bold;
 
       .brand-part1 {
-        color: $color-primary; // أحمر
+        color: $color-primary; 
       }
 
       .brand-part2 {
-        color: $color-secondary; // أسود
+        color: $color-secondary; 
       }
     }
   }
 
 
-  // روابط النافبار
+
   .nav-link {
     color: $color-secondary;
     font-weight: 500;
@@ -60,14 +63,14 @@ body {
     }
   }
 
-  // مجموعة الأدوات: البحث، السلة، الوضع الليلي
+
   .tools-group {
     display: flex;
     align-items: center;
     gap: 1rem;
   }
 
-  // زر السلة
+ 
   .cart-btn {
     position: relative;
     border: 1px solid $color-primary;
@@ -84,7 +87,7 @@ body {
     }
   }
 
-  // زر الوضع الليلي
+
   .toggle-theme {
     padding: 0.4rem 0.6rem;
     border-radius: 8px;
@@ -98,7 +101,7 @@ body {
     }
   }
 
-  // البحث
+
   .form-control {
     border-radius: 0.5rem;
     padding-inline-start: 1rem;
@@ -114,6 +117,46 @@ body {
       color: $color-white;
     }
   }
+
+
+.menu-wrapper {
+  position: relative;
+
+  .custom-menu-links {
+    position: absolute;
+    top: 100%;
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: $color-white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    display: flex;
+    gap: 1rem;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease;
+
+    a {
+      text-decoration: none;
+      color: $color-secondary;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &:hover .custom-menu-links {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 }
 
 .main-carousel {
@@ -399,7 +442,7 @@ body {
     direction: rtl;
 
     .brand-part1 {
-      color: #e53935 !important; // غلب Bootstrap
+      color: #e53935 !important; 
     }
 
     .brand-part2 {

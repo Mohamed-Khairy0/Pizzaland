@@ -1,4 +1,6 @@
 @use "sass:color";
+@use "variables" as v;
+@use "sass:map";
 
 @mixin btn-style($bg-color, $text-color) {
   background-color: $bg-color;
@@ -15,3 +17,27 @@
     transform: scale(1.05);
   }
 }
+
+
+@mixin apply-theme($theme) {
+  $primary: map.get($theme, primary);
+  $accent: map.get($theme, accent);
+
+  body {
+    background-color: color.adjust($primary, $lightness: 45%);
+    color: $primary;
+  }
+
+  .btn-theme {
+    background-color: $primary;
+    &:hover {
+      background-color: $accent;
+    }
+  }
+
+  h1, h2, h3 {
+    color: $primary;
+  }
+}
+
+

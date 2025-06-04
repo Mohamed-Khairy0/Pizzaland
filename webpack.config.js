@@ -84,6 +84,18 @@ module.exports = {
       filename: "index.html",
       template: "./src/index.html"
     }),
+    new HtmlWebpackPlugin({
+      filename: "margarita.html",
+      template: "./src/margarita.html"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "veggie.html",
+      template: "./src/veggie.html"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "chicken.html",
+      template: "./src/chicken.html"
+    }),
     
    
     new CssMinimizerPlugin({

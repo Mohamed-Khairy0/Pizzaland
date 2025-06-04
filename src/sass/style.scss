@@ -1,0 +1,506 @@
+@use './_variables.scss' as *;
+@use './mixins' as *;
+
+@font-face {
+  font-family: "cairoFont";
+  src: url(../fonts/Cairo-Regular.ttf);
+}
+
+body {
+  background-color: $color-neutral !important;
+  color: $color-secondary !important;
+  font-family: "cairoFont";
+
+}
+
+.navbar {
+  background-color: $color-white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  // الشعار + اسم الموقع
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    img {
+      width: 40px;
+      height: auto;
+      color: $color-primary;
+    }
+
+    .brand-text {
+      display: flex;
+      direction: rtl;
+      font-size: 1.5rem;
+      font-weight: bold;
+
+      .brand-part1 {
+        color: $color-primary; // أحمر
+      }
+
+      .brand-part2 {
+        color: $color-secondary; // أسود
+      }
+    }
+  }
+
+
+  // روابط النافبار
+  .nav-link {
+    color: $color-secondary;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &.active {
+      color: $color-primary;
+    }
+  }
+
+  // مجموعة الأدوات: البحث، السلة، الوضع الليلي
+  .tools-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  // زر السلة
+  .cart-btn {
+    position: relative;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+
+    .badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      font-size: 0.7rem;
+    }
+  }
+
+  // زر الوضع الليلي
+  .toggle-theme {
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    border: 1px solid $color-secondary;
+    background: transparent;
+    color: $color-secondary;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+
+  // البحث
+  .form-control {
+    border-radius: 0.5rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+  }
+
+  .btn-outline-primary {
+    border-color: $color-primary;
+    color: $color-primary;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+}
+
+.main-carousel {
+  .carousel-item {
+    height: 70vh;
+    min-height: 480px;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+    }
+
+    .carousel-caption {
+
+      padding: 16px 32px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50px;
+      display: inline-block;
+      max-width: 80%;
+
+    }
+
+
+
+
+    p {
+      font-size: 18px;
+      color: #eee;
+    }
+  }
+
+}
+
+.custom-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: $color-secondary;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.custom-btn {
+  @include btn-style($color-primary, $color-white);
+}
+
+.meals {
+  .card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+    border-radius: 12px;
+
+    .card-img-top {
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+      display: block;
+      width: 100%;
+    }
+
+
+    .image-wrapper {
+      position: relative;
+      overflow: hidden;
+
+      .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 1rem;
+        display: none;
+        z-index: 2;
+        height: 100%;
+      }
+
+      &:hover .image-overlay {
+        opacity: 1;
+      }
+    }
+
+    .card-description {
+      display: none;
+    }
+
+    h5 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 16px;
+      text-align: center;
+      color: $color-secondary;
+
+    }
+
+  }
+}
+
+.fa-fire {
+  animation: pulse 1.2s infinite;
+  color: #e60000;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+.deals {
+  background-color: $color-neutral;
+
+  
+
+  .carousel-wrapper {
+
+
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+  }
+
+
+
+
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: $color-secondary;
+
+    i {
+      color: $color-primary;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .carousel-item {
+
+    
+      
+  
+
+    img {
+      width: 100%;
+      height: 250px;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); 
+      border: 4px solid rgba(229, 57, 53, 0.1); 
+      max-width: 100%;
+      margin: 0 auto;
+       display: block;
+
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  .offer-box {
+    background-color: $color-white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    position: relative;
+    padding: 32px;
+    margin-right: 30px;
+
+    @media (max-width: 767.98px) {
+    margin-right: 0;
+    text-align: center;
+  }
+
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: $color-secondary;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      @include btn-style($color-primary, $color-white);
+    }
+  }
+
+  .product-category {
+    background-color: $color-accent;
+    color: $color-white;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .ribbon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    z-index: 2;
+
+    span {
+      position: absolute;
+      display: block;
+      width: 140px;
+      padding: 8px 0;
+      background-color: $color-primary;
+      color: $color-white;
+      text-align: center;
+      font-weight: bold;
+      font-size: 13px;
+      transform: rotate(-45deg);
+      top: 12px;
+      left: -40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(0, 0, 0, 0.1);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      color: #fff;
+      font-size: 20px;
+    }
+  }
+
+ 
+
+}
+
+.footer {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  padding: 48px 0;
+
+  .brand-text {
+    font-weight: bold;
+    font-size: 20px;
+    direction: rtl;
+
+    .brand-part1 {
+      color: #e53935 !important; // غلب Bootstrap
+    }
+
+    .brand-part2 {
+      color: #ffffff;
+    }
+  }
+
+  .footer-desc,
+  .footer p {
+    font-size: 14px;
+    color: #bbbbbb !important;
+    margin-bottom: 0;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: start;
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $color-primary !important;
+      }
+    }
+  }
+
+  h6 {
+
+    font-size: 16px;
+    margin-bottom: 16px;
+    font-weight: bold;
+    text-align: center;
+    
+    
+
+
+
+
+    @media (min-width: 768px) {
+      text-align: end;
+
+
+    }
+  }
+
+   .social-icon {
+    color: #fff;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &.facebook:hover {
+      background-color: #1877f2;
+      border-color: #1877f2;
+    }
+
+    &.instagram:hover {
+      background-color: #e1306c;
+      border-color: #e1306c;
+    }
+
+    &.twitter:hover {
+      background-color: #1da1f2;
+      border-color: #1da1f2;
+    }
+
+    &.whatsapp:hover {
+      background-color: #25d366;
+      border-color: #25d366;
+    }
+  }
+
+  .copyright {
+    border-top: 1px solid #444;
+    margin-top: 32px;
+    padding-top: 16px;
+    text-align: center !important;
+
+    p {
+      font-size: 13px;
+      color: #bbbbbb !important;
+      margin: 0;
+    }
+  }
+}
+

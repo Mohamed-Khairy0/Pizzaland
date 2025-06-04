@@ -1,8 +1,8 @@
 @use "sass:color";
-@use "variables" as v;
+@use "./variables" as *;
 @use "sass:map";
 
-@mixin btn-style($bg-color, $text-color) {
+@mixin btn-style($bg-color, $text-color, $hover-bg: null) {
   background-color: $bg-color;
   color: $text-color;
   padding: 0.5rem 1.2rem;
@@ -12,7 +12,7 @@
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    background-color: color.adjust($bg-color, $lightness: -10%);
+    background-color: if($hover-bg != null, $hover-bg, color.adjust($bg-color, $lightness: -10%));
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     transform: scale(1.05);
   }
@@ -39,5 +39,57 @@
     color: $primary;
   }
 }
+
+
+
+@mixin darkModeForPage($theme, $page-class) {
+  body.dark-mode.#{$page-class} {
+    .custom-breadcrumb {
+      a {
+        color: $color-text-dark;
+
+        &:hover {
+          color: map.get($theme, primary);
+        }
+      }
+
+      .breadcrumb-item.active {
+        color: map.get($theme, primary);
+      }
+
+      > li::before {
+        color: rgba(map.get($theme, primary), 0.4);
+      }
+    }
+
+    .comments-section {
+      background-color: $color-secondary;
+      color: $color-text-dark;
+
+      h3 {
+        color: map.get($theme, primary);
+      }
+
+      .comment-avatar {
+        border: 2px solid map.get($theme, primary);
+      }
+
+      .comment h5 {
+        color: $color-text-dark;
+      }
+
+      .rating {
+        color: #999;
+
+        .active {
+          color: map.get($theme, accent);
+        }
+      }
+    }
+
+    
+  }
+}
+
 
 

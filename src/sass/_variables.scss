@@ -22,3 +22,27 @@ $theme-chicken: (
   accent: #ffb74d
 );
 
+
+
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #1e1e1e;
+  --card-bg: #ffffff;
+  --btn-bg: #e53935;
+  --btn-text: #ffffff;
+  --accent-color: #ff7043;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --card-bg: #1e1e1e;
+  --btn-bg: #e53935;
+  --btn-text: #ffffff;
+  --accent-color: #ff7043;
+}
+
+$theme-about: (
+  primary: $color-primary,  
+  accent:  $color-accent
+);

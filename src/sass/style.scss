@@ -3,11 +3,16 @@
 @use './margarita.scss';
 @use './veggie.scss';
 @use './chicken.scss';
+@use './about.scss';
+@use './contact.scss';
+@use './dark-mode';
 
 @font-face {
   font-family: "cairoFont";
   src: url(../fonts/Cairo-Regular.ttf);
 }
+
+
 
 body {
   background-color: $color-neutral !important;
@@ -61,8 +66,10 @@ body {
     &.active {
       color: $color-primary;
     }
-  }
 
+    
+  }
+  
 
   .tools-group {
     display: flex;
@@ -543,6 +550,21 @@ body {
       font-size: 13px;
       color: #bbbbbb !important;
       margin: 0;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .menu-wrapper {
+    position: relative;
+
+    .custom-menu-links {
+      position: absolute;
+      top:  0 !important;
+      left: 0 !important;
+      transform: translateY(-10%) !important; // هنعدلها بالجافاسكريبت
+      width: max-content;
+      z-index: 999;
     }
   }
 }

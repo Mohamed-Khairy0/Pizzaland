@@ -9,24 +9,24 @@
 
 <body>
 
-  <header class="container">
+  <header class="w-100">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <div class="container">
+       
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <a class="navbar-brand d-flex align-items-center gap-2" href="#">
           <img src="img/logo3.svg" alt="شعار بيتزالاند" width="36" height="36">
           <span class="fw-bold brand-text">
             <span class="brand-part1">بيتزا</span><span class="brand-part2">لاند</span>
           </span>
         </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">الرئيسية</a>
+              <a class="nav-link" aria-current="page" href="index.html">الرئيسية</a>
             </li>
             <li class="nav-item position-relative menu-wrapper">
               <a class="nav-link" href="#">المنيو</a>
@@ -37,20 +37,20 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">حول المطعم</a>
+              <a class="nav-link" href="about.html">حول المطعم</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">اتصل بنا</a>
+              <a class="nav-link" href="contact.html">اتصل بنا</a>
             </li>
 
 
           </ul>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="ابحث" aria-label="Search" />
-            <button class="btn btn-outline-success" type="submit">البحث</button>
+            <button class="btn btn-outline-danger" type="submit">البحث</button>
           </form>
 
-          <div class="d-flex align-items-center gap-3 ms-3">
+          <div class="d-flex align-items-center gap-3 ms-3 mt-3 mt-lg-0">
 
             <button id="theme-toggle" class="btn btn-sm btn-outline-secondary" type="button">
               <i class="fas fa-moon"></i>
@@ -59,10 +59,12 @@
 
             <a href="#" class="btn btn-sm btn-outline-primary position-relative">
               <i class="fas fa-shopping-cart"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <span id="cart-count"
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 0
               </span>
             </a>
+
           </div>
         </div>
       </div>
@@ -144,7 +146,7 @@
             </div>
             <div class="card-body text-center">
               <h5 class="card-title">بيتزا مارجريتا</h5>
-              <a href="pizza-margherita.html" class="btn btn-primary custom-btn">اطلب الآن</a>
+              <a href="margarita.html" class="btn btn-primary custom-btn">اطلب الآن</a>
             </div>
           </div>
         </div>
@@ -163,7 +165,7 @@
             </div>
             <div class="card-body text-center">
               <h5 class="card-title">بيتزا دجاج</h5>
-              <a href="pizza-margherita.html" class="btn btn-primary custom-btn">اطلب الآن</a>
+              <a href="chicken.html" class="btn btn-primary custom-btn">اطلب الآن</a>
 
             </div>
           </div>
@@ -183,7 +185,7 @@
             </div>
             <div class="card-body text-center">
               <h5 class="card-title">بيتزا خضار</h5>
-              <a href="pizza-margherita.html" class="btn btn-primary custom-btn">اطلب الآن</a>
+              <a href="veggie.html" class="btn btn-primary custom-btn">اطلب الآن</a>
 
             </div>
           </div>
@@ -222,7 +224,7 @@
                     <div class="product-category mb-2">عرض خاص</div>
                     <h1>كومبو البيتزا</h1>
                     <p>بيتزا + بطاطس ويدجز+ مشروب فقط بـ 99 جنيه</p>
-                    <a href="#" class="btn btn-danger mt-3">اضف للسلة</a>
+                    <a href="#" class="btn btn-danger mt-3 add-to-cart">اضف للسلة</a>
                   </div>
                 </div>
               </div>
@@ -242,7 +244,7 @@
                     <div class="product-category mb-2">B1G1</div>
                     <h1>اشتري واحدة وخذ الثانية هدية</h1>
                     <p>ساري على جميع أنواع البيتزا أيام الجمعة فقط</p>
-                    <a href="#" class="btn btn-danger mt-3">اضف للسلة</a>
+                    <a href="#" class="btn btn-danger mt-3 add-to-cart">اضف للسلة</a>
                   </div>
                 </div>
               </div>
@@ -262,7 +264,7 @@
                     <div class="product-category mb-2">عرض الشلة</div>
                     <h1>اشتري 2 بيتزا من اختيارك وخلي التالتة علينا</h1>
                     <p>العرض ساري أيام الخميس والجمعة فقط</p>
-                    <a href="#" class="btn btn-danger mt-3">اضف للسلة</a>
+                    <a href="#" class="btn btn-danger mt-3 add-to-cart">اضف للسلة</a>
                   </div>
                 </div>
               </div>
@@ -305,7 +307,7 @@
         <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column align-items-center">
           <ul class="list-unstyled d-flex flex-column gap-2">
             <li><a href="#" class="text-white text-decoration-none">سياسة الخصوصية</a></li>
-            <li><a href="#" class="text-white text-decoration-none">عن المطعم</a></li>
+            <li><a href="about.html" class="text-white text-decoration-none">عن المطعم</a></li>
             <li><a href="#" class="text-white text-decoration-none">الوظائف الشاغرة</a></li>
           </ul>
         </div>

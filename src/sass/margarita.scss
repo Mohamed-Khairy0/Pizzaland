@@ -3,8 +3,11 @@
 @use "sass:map";
 @use "sass:color";
 
+@include darkModeForPage($theme-margarita, 'margarita-page');
+
 
 .margarita-page {
+  
 
     @include apply-theme($theme-margarita);
 

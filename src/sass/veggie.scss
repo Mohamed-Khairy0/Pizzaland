@@ -3,8 +3,10 @@
 @use "sass:map";
 @use "sass:color";
 
+@include darkModeForPage($theme-veggie, 'veggie-page');
 
 .veggie-page {
+ 
 
     @include apply-theme($theme-veggie);
 

@@ -4,6 +4,9 @@
 @use "sass:color";
 
 
+@include darkModeForPage($theme-chicken, 'chicken-page');
+
+
 .chicken-page {
 
  @include apply-theme($theme-chicken);

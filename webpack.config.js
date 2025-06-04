@@ -11,6 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'main.js',
+    publicPath: '/',
   },
 
   devServer: {
@@ -57,6 +58,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               esModule: false,
+              publicPath: '/'
             },
           },
 
@@ -95,6 +97,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "chicken.html",
       template: "./src/chicken.html"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "about.html",
+      template: "./src/about.html"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "contact.html",
+      template: "./src/contact.html"
     }),
     
    

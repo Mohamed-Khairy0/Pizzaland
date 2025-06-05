@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'main.js',
-    publicPath: '/',
+    publicPath: '/Pizzaland/',
   },
 
   devServer: {
@@ -58,7 +58,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               esModule: false,
-              publicPath: '/'
+              publicPath: '/Pizzaland/',
             },
           },
 
